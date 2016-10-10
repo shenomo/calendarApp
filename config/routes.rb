@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/meet', to: 'meetings#all_users_meetings'
 
   root to: 'meetings#show_calendar'
+  
 
 
   # The priority is based upon order of creation: first created -> highest priority.
