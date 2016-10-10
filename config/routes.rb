@@ -1,15 +1,14 @@
 Rails.application.routes.draw do
   resources :meetings
+
+  devise_for :users
   
   get '/users/sing_out', to: 'devise/sessions#destroy'
 
   get '/meet', to: 'meetings#all_users_meetings'
 
-
-
-  devise_for :users
-
   root to: 'meetings#show_calendar'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

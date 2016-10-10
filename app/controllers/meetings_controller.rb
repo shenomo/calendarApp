@@ -39,11 +39,9 @@ class MeetingsController < ApplicationController
   def update
     respond_to do |format|
       if @meeting.update(meeting_params)
-        format.html { redirect_to @meeting, notice: 'Meeting was successfully updated.' }
-        
+        format.html { redirect_to @meeting, notice: 'Meeting was successfully updated.' }      
       else
         format.html { render :edit }
-        
       end
     end
   end
@@ -56,12 +54,12 @@ class MeetingsController < ApplicationController
   end
 
   private
-    def set_meeting
-      @meeting = Meeting.find(params[:id])
-    end
 
-    def meeting_params
-      params.require(:meeting).permit(:name, :start_time)
-    end
-    
+  def set_meeting
+    @meeting = Meeting.find(params[:id])
+  end
+
+  def meeting_params
+    params.require(:meeting).permit(:name, :start_time)
+  end  
 end
