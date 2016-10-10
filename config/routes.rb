@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   
   get '/users/sing_out', to: 'devise/sessions#destroy'
 
-  get 'meet', to: 'meetings#all_users_meetings'
+  get '/meet', to: 'meetings#all_users_meetings'
 
 
 
