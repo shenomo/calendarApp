@@ -36,6 +36,7 @@ Devise.setup do |config|
   # or not authentication should be aborted when the value is not present.
   # config.authentication_keys = [:email]
 
+  config.secret_key = 'c612692039f82b64eab797560571ee2eac93d3bf545fa26381f0dac47571e83d91886912928aa23b69f2ec2dc981da06563a3de544fe1f36d3f500208af76ca9' if Rails.env == 'production'
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the
   # find_for_authentication method and considered in your model lookup. For instance,
@@ -243,7 +244,7 @@ Devise.setup do |config|
 
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
-
+  #config.sign_out_via = :get
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.

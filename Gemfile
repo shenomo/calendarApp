@@ -42,16 +42,38 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem "awesome_print"
+  gem "brakeman", require: false
+  gem "bundler-audit", require: false
+  gem "byebug"
+  gem "coffeelint"
+  gem "dotenv-rails"
+  gem "factory_girl_rails"
+  gem "faker"
+  gem "jasmine", "> 2.0"
+  gem "jasmine-jquery-rails"
   gem "pry-rails"
+  gem "rspec-rails", "~> 3.4"
+  gem "rubocop", require: false
+  gem "rubocop-rspec", require: false
+  gem "scss_lint", require: false
+  gem "slim_lint", require: false
 end
 
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
+  gem "bullet"
+  gem "foreman", require: false
+  gem "letter_opener"
+  gem "quiet_assets"
+  gem "rails-erd"
+  gem "slim-rails"
+  gem "spring"
+  gem "spring-commands-rspec"
+  gem "web-console", "~> 2.0"
+end
 
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+group :staging, :production do
+  gem "newrelic_rpm"
+  gem "rails_stdout_logging"
 end
 
