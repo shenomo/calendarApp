@@ -300,9 +300,10 @@ DEPENDENCIES
   jquery-rails
   letter_opener
   newrelic_rpm
-  pg (~> 0.15)
+  pg
   pry-rails
   quiet_assets
+  rack (~> 1.6, >= 1.6.4)
   rails (= 4.2.6)
   rails-erd
   rails_stdout_logging
