@@ -1,9 +1,10 @@
-<%= month_calendar events: @meetings do |date, meetings| %>
+<%= month_calendar events: @finalMeetings do |date, meetings| %>
   <%= date %>
 
   <% meetings.each do |meeting| %>
     <div class = "calendarElement">
-      <%= link_to meeting.name, edit_meeting_path(meeting) %><br></br>
+      <%= link_to meeting.name%><br></br>
     </div>
   <% end %>
 <% end %>
+<!-- , edit_meeting_path(meeting)  -->

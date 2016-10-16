@@ -19,6 +19,18 @@
     <%= f.label :start_time %><br>
     <%= f.datetime_select :start_time %>
   </div>
+
+  <div class="field">
+    <%= f.label :rule%><br>
+    <%= f.select(:rule, ["daily", "weekly", "monthly", "annually"]) %>
+    
+  </div>
+
+  <div class="field">
+    <%= f.label :interval%><br>
+    <%= f.text_field :interval%>
+  </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

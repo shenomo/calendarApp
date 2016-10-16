@@ -16,6 +16,9 @@ gem "simple_calendar", "~> 2.0"
 
 gem 'bcrypt',         '3.1.11'
 
+gem 'ice_cube', '~> 0.12.1'
+gem 'schedulable'
+
 gem 'devise'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -32,6 +35,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem "dotenv-rails"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -48,7 +52,6 @@ group :development, :test do
   gem "bundler-audit", require: false
   gem "byebug"
   gem "coffeelint"
-  gem "dotenv-rails"
   gem "factory_girl_rails"
   gem "faker"
   gem "jasmine", "> 2.0"

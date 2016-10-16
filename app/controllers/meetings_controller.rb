@@ -22,7 +22,59 @@ class MeetingsController < ApplicationController
 
 
   def show_calendar
+    
     @meetings = current_user.meetings
+    @finalMeetings = Array.new
+
+    @meetings.each do |s|
+      @finalMeetings.push(s)  
+    
+      if s.rule == "weekly"
+        interval = s.interval
+        count = 7
+        while interval != 0
+          newDate = s.dup
+          newDate.start_time += count.days
+          count+=7
+          @finalMeetings.push(newDate)
+          interval -= 1
+        end
+      end
+      if s.rule == "daily"
+        interval = s.interval
+        count = 1
+        while interval != 0
+          newDate = s.dup
+          newDate.start_time += count.days
+          count+=1
+          @finalMeetings.push(newDate)
+          interval -= 1
+        end
+      end
+      if s.rule == "monthly"
+        interval = s.interval
+        count=30
+        while interval != 0
+          newDate = s.dup
+          newDate.start_time += count.days
+          count+=30
+          @finalMeetings.push(newDate)
+          interval -= 1
+        end
+      end
+      if s.rule == "annually"
+        interval = s.interval
+        count=365
+        while interval != 0
+          newDate = s.dup
+          newDate.start_time += count.days
+          count+=365
+          @finalMeetings.push(newDate)
+          interval -= 1
+        end
+      end
+    end
+
   end
 
   def create
@@ -61,6 +113,6 @@ class MeetingsController < ApplicationController
   end
 
   def meeting_params
-    params.require(:meeting).permit(:name, :start_time)
+    params.require(:meeting).permit(:name, :start_time, :rule, :interval)
   end  
 end
